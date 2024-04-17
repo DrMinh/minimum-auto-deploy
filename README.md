@@ -9,11 +9,15 @@ Before setting up the server, ensure you have the following:
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 # Installation
-1. Clone this repository to your server.
+
+1. Clone/create your project repository into your favorist folder.
+
+2. Clone this repository to your server.
 ```console
 git clone https://github.com/DrMinh/minimum-auto-deploy.git
 ```
-2. Create a `config.json` file in main folder
+
+3. Create a `config.json` file in `minimum-auto-deploy` main folder
 ```json
 {
     "port": 3333,
@@ -21,7 +25,7 @@ git clone https://github.com/DrMinh/minimum-auto-deploy.git
     "repositories": [
             {
                     "clone_url": "https://github.com/YourAccount/your-project.git",
-                    "local_path": "/path/to/your-git-fodder/",
+                    "local_path": "/path/to/your-project-fodder/",
                     "branch": "dev-build",
                     "ssh_infor": {
                             "ssh_url": "git@github.com:YourAccount/your-project.git",
@@ -35,11 +39,11 @@ git clone https://github.com/DrMinh/minimum-auto-deploy.git
 ```
 `ssh_info` is optional. If your Git repository does not support SSH, you do not need to provide it. However, you will need to `cd` into your Git folder and `pull` the updates yourself in the `script`.
 
-3. run the server
+4. run the server
 ```console
 node index.js
 ```
-4. Set up git webhook to send request to our server each time repository have new update
+5. Set up git webhook to send request to our server each time repository have new update
 https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks
 
 ![webhook-config](./webhook-config.png)
