@@ -43,6 +43,12 @@ git clone https://github.com/DrMinh/minimum-auto-deploy.git
 ```console
 pm2 start "node index.js"
 ```
+or
+
+```console
+nohup node index.js &
+```
+
 5. Set up git webhook to send request to our server each time repository have new update
 https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks
 
