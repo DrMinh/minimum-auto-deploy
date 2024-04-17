@@ -41,7 +41,7 @@ git clone https://github.com/DrMinh/minimum-auto-deploy.git
 
 4. run the server
 ```console
-node index.js
+pm2 start "node index.js"
 ```
 5. Set up git webhook to send request to our server each time repository have new update
 https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks
@@ -49,4 +49,4 @@ https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks
 ![webhook-config](./webhook-config.png)
 
 # Warning
-The `Minimum Auto Deploy` only uses `git pull` to update your existing project folder. Before using it, you MUST clone your project repository first.
+If you change config.json, you need to re-start webhook server.
